@@ -10,8 +10,6 @@ const signin = require('./controllers/signin');
 const profile = require('./controllers/profile');
 const image = require('./controllers/image');
 
-// port
-const port =  4000;
 
 const app = express();
 app.use(bodyParser.json());
@@ -46,6 +44,8 @@ app.post("/imageUrl", (req, res) => {image.handleApiCall(req, res)});
 
 
 // port
-app.listen(port, () =>{
-    console.log(`Server started at port: ${port}`)
+const PORT = process.env.PORT || 4000;
+
+app.listen(PORT, () =>{
+    console.log(`Server started at port: ${PORT}`)
 })
