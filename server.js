@@ -29,7 +29,7 @@ const db = knex({
 
 
 // Home endpoint
-app.get("/", (req, res) => { res.send(db.users)});
+app.get("/", (req, res) => { res.send("Succesfully working")});
 //  Signin endpoint
 app.post("/signin", (req, res) => {signin.handleSignin(req, res, db, bcrypt)});
 // Register endpoint
